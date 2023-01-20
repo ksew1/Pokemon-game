@@ -38,6 +38,11 @@ public class Vector2d {
     public Vector2d lowerLeft(Vector2d other) {
         return new Vector2d(Math.min(this.x, other.x), Math.min(this.y, other.y));
     }
+    public Vector2d toGrid(int n) {
+        int firstCord = n - this.y - 1;
+        int secondCord = this.x;
+        return new Vector2d(firstCord,  secondCord);
+    }
 
     public Vector2d opposite() {
         return new Vector2d(-this.x, -this.y);
