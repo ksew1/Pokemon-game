@@ -4,33 +4,38 @@ import agh.oop.pokemon.*;
 import agh.oop.pokemon.elements.IMapElement;
 import agh.oop.pokemon.elements.IPokemon;
 import javafx.fxml.FXML;
+
 import javafx.scene.Node;
+
 import javafx.scene.layout.*;
 
 import java.util.Objects;
 
 public class MapController {
-
+    @FXML
+    VBox mainVBox;
     @FXML
     GridPane grid;
+
+    private ScreenController screenController;
     private final int n = 25;
     private final double cellPercent = 100 / (double) n;
-    private WorldMap worldMap = new WorldMap(this.n);
-
+    private final WorldMap worldMap = new WorldMap(this.n);
 
 
     @FXML
-    private void initialize() {
+    public void initialize(ScreenController screenController) {
+        this.screenController = screenController;
         this.worldMap.placeObstacles(n);
-        this.worldMap.placePokemons(n);
+        this.worldMap.placePokemons(2);
         initGrid();
-
-
     }
-    private void addNormalToGrid(Node node,Vector2d position) {
+
+    private void addNormalToGrid(Node node, Vector2d position) {
         Vector2d gridPosition = position.toGrid(n);
         grid.add(node, gridPosition.y, gridPosition.x, 1, 1);
     }
+
     private void initGrid() {
         grid.setGridLinesVisible(true);
         grid.setStyle("-fx-background-color: #8fbc8f;");
@@ -81,15 +86,20 @@ public class MapController {
         if (worldMap.canMoveTo(newHeroPosition)) {
             IMapElement mapElement = worldMap.objectAt(newHeroPosition);
 
-            if ( mapElement instanceof IPokemon) {
+            if (mapElement instanceof IPokemon) {
+                worldMap.getHero().setOpponent((IPokemon) mapElement);
                 grid.getChildren().remove(getNodeByRowColumnIndex(newHeroPosition.toGrid(n)));
                 Vector2d newPosition = worldMap.deletePokemonAndPlace(newHeroPosition);
-                addNormalToGrid(worldMap.objectAt(newPosition).getImageViewPane(),newPosition);
-
-                //worldMap.placePokemons(1);
+                addNormalToGrid(worldMap.objectAt(newPosition).getImageViewPane(), newPosition);
+                screenController.activateFight(this.worldMap.getHero());
+                worldMap.getHero().setOpponent(null);
             }
+
             moveElement(oldHeroPosition, newHeroPosition);
             this.worldMap.setHeroPosition(newHeroPosition);
+
+
+
         }
     }
 }

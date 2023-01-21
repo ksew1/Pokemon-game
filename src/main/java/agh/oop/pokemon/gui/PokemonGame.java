@@ -2,10 +2,8 @@ package agh.oop.pokemon.gui;
 
 import agh.oop.pokemon.MapDirection;
 import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,13 +11,14 @@ import java.io.IOException;
 public class PokemonGame extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(PokemonGame.class.getResource("/fxml/map-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 800);
-        MapController mapController = fxmlLoader.getController();
 
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
+
+        Scene scene = new Scene(new VBox(), 800, 800);
+        ScreenController screenController = new ScreenController(scene);
+        MapController mapController = screenController.getMapController();
+
+        scene.setOnKeyPressed(event -> {
+            if (screenController.getActiveScene().equals("map")) {
                 switch (event.getCode()) {
                     case UP, W -> mapController.moveHero(MapDirection.NORTH);
                     case DOWN, S -> mapController.moveHero(MapDirection.SOUTH);
@@ -28,6 +27,7 @@ public class PokemonGame extends Application {
                 }
             }
         });
+
 
         stage.setTitle("Pokemon");
         stage.setScene(scene);

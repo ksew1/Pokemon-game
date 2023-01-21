@@ -24,7 +24,9 @@ public interface IPokemon {
 
     int getHealth();
 
-    void setHealth(int health);
+    void setCurrentHealth(int currentHealth);
+    int getCurrentHealth();
+    int getLevel();
 
     ImageViewPane getImageViewPane();
 }

@@ -7,6 +7,8 @@ import javafx.scene.image.ImageView;
 
 public abstract class AbstractPokemon implements IMapElement, IPokemon {
     protected int health;
+
+    protected int currentHealth;
     protected int attack;
     protected int level = 1;
     protected Type type;
@@ -32,10 +34,12 @@ public abstract class AbstractPokemon implements IMapElement, IPokemon {
     }
 
     public int getSuperAttack() {
+        this.currentHealth = (int) Math.ceil(currentHealth * 0.9);
         return (int) Math.ceil(attack * 1.5);
     }
 
     public int getUltraAttack() {
+        this.currentHealth = (int) Math.ceil(currentHealth * 0.7);
         return (int) Math.ceil(attack * 3);
     }
 
@@ -55,12 +59,20 @@ public abstract class AbstractPokemon implements IMapElement, IPokemon {
         return type;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
     public int getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public int getCurrentHealth() {
+        return currentHealth;
+    }
+
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
     }
 
     protected void setLevel(int level) {

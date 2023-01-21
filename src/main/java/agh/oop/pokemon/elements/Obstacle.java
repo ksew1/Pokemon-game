@@ -1,6 +1,5 @@
 package agh.oop.pokemon.elements;
 
-import agh.oop.pokemon.elements.IMapElement;
 import agh.oop.pokemon.gui.ImageViewPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

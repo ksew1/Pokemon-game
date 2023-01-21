@@ -108,4 +108,7 @@ public class WorldMap {
         return hero;
     }
 
+    public Map<Vector2d, AbstractPokemon> getPokemonMap() {
+        return pokemonMap;
+    }
 }

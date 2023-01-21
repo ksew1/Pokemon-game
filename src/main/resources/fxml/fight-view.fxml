@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="agh.oop.pokemon.gui.FightController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <children>
+        <GridPane fx:id="grid" alignment="CENTER" HBox.hgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="25"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="25"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="25"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="25"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="45" vgrow="SOMETIMES"/>
+                <RowConstraints percentHeight="45" vgrow="SOMETIMES"/>
+                <RowConstraints percentHeight="10" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Button onAction="#normalAttack" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Attack" GridPane.rowIndex="2"/>
+                <Button onAction="#superAttack" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Super Attack" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Button onAction="#ultraAttack" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Ultra Attack" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <Button maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Catch" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+                <Label fx:id="chosenPokemonHealth" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <Label fx:id="chosenPokemonType" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label fx:id="chosenPokemonLevel" text="Label" GridPane.rowIndex="1"/>
+                <Label fx:id="opponentHealth" text="Label" GridPane.columnIndex="1"/>
+                <Label fx:id="opponentType" text="Label" GridPane.columnIndex="2"/>
+                <Label fx:id="opponentLevel" text="Label" GridPane.columnIndex="3"/>
+            </children>
+        </GridPane>
+    </children>
+</HBox>

@@ -7,7 +7,8 @@ public class Bulbasaur extends AbstractPokemon {
 
     public Bulbasaur(int level) {
         this.attack = 30;
-        this.health = 20;
+        this.health = 200;
+        this.currentHealth = 200;
         this.type = Type.FIRE;
         this.normalAttackType = Type.WATER;
         this.superAttackType = Type.AIR;
