@@ -30,6 +30,7 @@ public class PokemonGame extends Application {
                 }
             }
         });
+        stage.setMaximized(true);
         stage.setTitle("Pokemon");
         stage.setScene(scene);
         stage.show();
