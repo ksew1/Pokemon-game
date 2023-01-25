@@ -1,6 +1,9 @@
 package agh.oop.pokemon;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
+
 public class Vector2d {
     public final int x;
     public final int y;
@@ -15,33 +18,34 @@ public class Vector2d {
 
     }
 
-    public boolean precedes(Vector2d other) {
+    public boolean precedes(@NotNull Vector2d other) {
         return this.x <= other.x && this.y <= other.y;
     }
 
-    public boolean follows(Vector2d other) {
+    public boolean follows(@NotNull Vector2d other) {
         return this.x >= other.x && this.y >= other.y;
     }
 
-    public Vector2d add(Vector2d other) {
+    public Vector2d add(@NotNull Vector2d other) {
         return new Vector2d(this.x + other.x, this.y + other.y);
     }
 
-    public Vector2d subtract(Vector2d other) {
+    public Vector2d subtract(@NotNull Vector2d other) {
         return new Vector2d(this.x - other.x, this.y - other.y);
     }
 
-    public Vector2d upperRight(Vector2d other) {
+    public Vector2d upperRight(@NotNull Vector2d other) {
         return new Vector2d(Math.max(this.x, other.x), Math.max(this.y, other.y));
     }
 
-    public Vector2d lowerLeft(Vector2d other) {
+    public Vector2d lowerLeft(@NotNull Vector2d other) {
         return new Vector2d(Math.min(this.x, other.x), Math.min(this.y, other.y));
     }
+
     public Vector2d toGrid(int n) {
         int firstCord = n - this.y - 1;
         int secondCord = this.x;
-        return new Vector2d(firstCord,  secondCord);
+        return new Vector2d(firstCord, secondCord);
     }
 
     public Vector2d opposite() {

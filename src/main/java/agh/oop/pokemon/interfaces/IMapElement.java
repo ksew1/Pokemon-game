@@ -1,4 +1,4 @@
-package agh.oop.pokemon.elements;
+package agh.oop.pokemon.interfaces;
 
 import agh.oop.pokemon.gui.ImageViewPane;
 

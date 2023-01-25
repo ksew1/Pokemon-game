@@ -1,4 +1,6 @@
-package agh.oop.pokemon;
+package agh.oop.pokemon.enums;
+
+import agh.oop.pokemon.Vector2d;
 
 public enum MapDirection {
     NORTH,

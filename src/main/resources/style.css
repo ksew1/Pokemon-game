@@ -1,0 +1,13 @@
+
+.root {
+    -fx-font-size: 1.3em;
+    -fx-font-family: "BM Hanna 11yrs Old";
+}
+
+#info {
+    -fx-font-size: 2.5em;
+}
+#endText {
+    -fx-font-size: 3em;
+}
+

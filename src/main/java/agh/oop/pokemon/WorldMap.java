@@ -1,20 +1,27 @@
 package agh.oop.pokemon;
 
 import agh.oop.pokemon.elements.*;
+import agh.oop.pokemon.elements.pokemons.Bulbasaur;
+import agh.oop.pokemon.elements.pokemons.Gengar;
+import agh.oop.pokemon.interfaces.IMapElement;
+import agh.oop.pokemon.interfaces.IPokemon;
+import agh.oop.pokemon.interfaces.IPositionChangeObserver;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class WorldMap {
+public class WorldMap implements IPositionChangeObserver {
     private final int n;
     private Vector2d heroPosition;
     private final Hero hero = new Hero();
+    private IPokemon boss = new Gengar(20);
     private Vector2d bossPosition;
     private final List<Vector2d> freePositions = new ArrayList<>();
     private final Map<Vector2d, Obstacle> obstacleMap = new HashMap<>();
-    private final Map<Vector2d, AbstractPokemon> pokemonMap = new HashMap<>();
+    private final Map<Vector2d, IPokemon> pokemonMap = new HashMap<>();
 
     public WorldMap(int n) {
         this.n = n;
@@ -32,9 +39,8 @@ public class WorldMap {
     }
 
     private void placeHero() {
-        int randomIndex = RandomGenerator.getRandom(freePositions.size());
-        this.heroPosition = freePositions.get(randomIndex);
-        freePositions.remove(randomIndex);
+        this.heroPosition = new Vector2d(n / 2  , n / 2);
+        freePositions.remove(heroPosition);
     }
 
     private void placeBoss() {
@@ -56,7 +62,7 @@ public class WorldMap {
         if (number > freePositions.size()) number = freePositions.size();
         for (int i = 0; i < number; i++) {
             int randomIndex = RandomGenerator.getRandom(freePositions.size());
-            pokemonMap.put(freePositions.get(randomIndex), new Bulbasaur(1));
+            pokemonMap.put(freePositions.get(randomIndex), RandomGenerator.getRandomPokemon(hero.getHighestLevel()));
             freePositions.remove(randomIndex);
         }
     }
@@ -68,19 +74,17 @@ public class WorldMap {
         //add
         int randomIndex = RandomGenerator.getRandom(freePositions.size());
         Vector2d newPosition = freePositions.get(randomIndex);
-        pokemonMap.put(newPosition, new Bulbasaur(1));
+        pokemonMap.put(newPosition, RandomGenerator.getRandomPokemon(hero.getHighestLevel()));
         freePositions.remove(randomIndex);
         return newPosition;
+    }
 
+    protected boolean isInBorders(@NotNull Vector2d position) {
+        return position.follows(new Vector2d(0, 0)) && position.precedes(new Vector2d(this.n - 1, this.n - 1));
     }
 
     public boolean canMoveTo(Vector2d position) {
         return isInBorders(position) && !(objectAt(position) instanceof Obstacle);
-    }
-
-    protected boolean isInBorders(Vector2d position) {
-        return position.follows(new Vector2d(0, 0)) &&
-                position.precedes(new Vector2d(this.n - 1, this.n - 1));
     }
 
     public IMapElement objectAt(Vector2d position) {
@@ -88,7 +92,10 @@ public class WorldMap {
             return obstacleMap.get(position);
         }
         if (pokemonMap.containsKey(position)) {
-            return pokemonMap.get(position);
+            return (IMapElement) pokemonMap.get(position);
+        }
+        if (position.equals(bossPosition)) {
+            return (IMapElement) boss;
         }
         if (position.equals(heroPosition)) {
             return hero;
@@ -96,19 +103,29 @@ public class WorldMap {
         return null;
     }
 
-    public Vector2d getHeroPosition() {
-        return heroPosition;
+    public void positionChanged(Vector2d oldPosition, Vector2d newPosition) {
+        IPokemon pokemon = pokemonMap.get(oldPosition);
+        pokemonMap.remove(oldPosition);
+        pokemonMap.put(newPosition, pokemon);
+        freePositions.remove(newPosition);
+        freePositions.add(oldPosition);
     }
 
+    // Setter methods
     public void setHeroPosition(Vector2d heroPosition) {
         this.heroPosition = heroPosition;
+    }
+
+    // Getter methods
+    public Vector2d getHeroPosition() {
+        return heroPosition;
     }
 
     public Hero getHero() {
         return hero;
     }
 
-    public Map<Vector2d, AbstractPokemon> getPokemonMap() {
+    public Map<Vector2d, IPokemon> getPokemonMap() {
         return pokemonMap;
     }
 }

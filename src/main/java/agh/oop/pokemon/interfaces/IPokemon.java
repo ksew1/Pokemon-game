@@ -1,6 +1,6 @@
-package agh.oop.pokemon.elements;
+package agh.oop.pokemon.interfaces;
 
-import agh.oop.pokemon.Type;
+import agh.oop.pokemon.enums.Type;
 import agh.oop.pokemon.gui.ImageViewPane;
 
 public interface IPokemon {
@@ -29,4 +29,10 @@ public interface IPokemon {
     int getLevel();
 
     ImageViewPane getImageViewPane();
+
+    int getSuperAttackWithOutMiss();
+
+    int getUltraAttackWithOutMiss();
+    void setActive(boolean active);
+    boolean isActive();
 }
