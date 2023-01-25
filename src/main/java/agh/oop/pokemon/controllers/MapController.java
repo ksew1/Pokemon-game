@@ -1,14 +1,14 @@
 package agh.oop.pokemon.controllers;
 
-import agh.oop.pokemon.*;
 import agh.oop.pokemon.elements.Hero;
+import agh.oop.pokemon.elements.WorldMap;
 import agh.oop.pokemon.interfaces.IMapElement;
 import agh.oop.pokemon.interfaces.IPokemon;
 import agh.oop.pokemon.enums.MapDirection;
+import agh.oop.pokemon.utils.RandomGenerator;
+import agh.oop.pokemon.utils.Vector2d;
 import javafx.fxml.FXML;
-
 import javafx.scene.Node;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
@@ -28,8 +28,7 @@ public class MapController {
 
     private ScreenController screenController;
     private final int n = 25;
-    private final double cellPercent = 100 / (double) n;
-    private final WorldMap worldMap = new WorldMap(this.n);
+    private final WorldMap worldMap = new WorldMap(n);
 
 
     @FXML
@@ -53,6 +52,7 @@ public class MapController {
         grid.setStyle("-fx-background-color: #8fbc8f;");
 
         ColumnConstraints columnConstraints = new ColumnConstraints();
+        double cellPercent = 100 / (double) n;
         columnConstraints.setPercentWidth(cellPercent);
 
         RowConstraints rowConstraints = new RowConstraints();

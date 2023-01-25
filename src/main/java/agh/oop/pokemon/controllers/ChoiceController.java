@@ -19,7 +19,7 @@ public class ChoiceController {
     @FXML
     private HBox box;
     private ScreenController screenController;
-    private List<PokemonController> pokemonControllerList = new ArrayList<>();
+    private final List<PokemonController> pokemonControllerList = new ArrayList<>();
 
     @FXML
     public void initialize(ScreenController screenController , @NotNull Hero hero) {

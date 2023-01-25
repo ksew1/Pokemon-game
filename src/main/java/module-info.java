@@ -19,4 +19,6 @@ module agh.oop.pokemon {
     opens agh.oop.pokemon.controllers to javafx.fxml;
     exports agh.oop.pokemon.elements.pokemons;
     opens agh.oop.pokemon.elements.pokemons to javafx.fxml;
+    exports agh.oop.pokemon.utils;
+    opens agh.oop.pokemon.utils to javafx.fxml;
 }

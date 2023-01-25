@@ -1,4 +1,4 @@
-package agh.oop.pokemon;
+package agh.oop.pokemon.utils;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -30,17 +30,6 @@ public class Vector2d {
         return new Vector2d(this.x + other.x, this.y + other.y);
     }
 
-    public Vector2d subtract(@NotNull Vector2d other) {
-        return new Vector2d(this.x - other.x, this.y - other.y);
-    }
-
-    public Vector2d upperRight(@NotNull Vector2d other) {
-        return new Vector2d(Math.max(this.x, other.x), Math.max(this.y, other.y));
-    }
-
-    public Vector2d lowerLeft(@NotNull Vector2d other) {
-        return new Vector2d(Math.min(this.x, other.x), Math.min(this.y, other.y));
-    }
 
     public Vector2d toGrid(int n) {
         int firstCord = n - this.y - 1;
@@ -48,9 +37,6 @@ public class Vector2d {
         return new Vector2d(firstCord, secondCord);
     }
 
-    public Vector2d opposite() {
-        return new Vector2d(-this.x, -this.y);
-    }
 
 
     public boolean equals(Object other) {

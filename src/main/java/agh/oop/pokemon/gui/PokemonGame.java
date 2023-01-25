@@ -30,7 +30,6 @@ public class PokemonGame extends Application {
                 }
             }
         });
-        //screenController.activateBeforeFight();
         stage.setTitle("Pokemon");
         stage.setScene(scene);
         stage.show();

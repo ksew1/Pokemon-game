@@ -1,7 +1,7 @@
-package agh.oop.pokemon;
+package agh.oop.pokemon.elements;
 
-import agh.oop.pokemon.elements.*;
-import agh.oop.pokemon.elements.pokemons.Bulbasaur;
+import agh.oop.pokemon.utils.RandomGenerator;
+import agh.oop.pokemon.utils.Vector2d;
 import agh.oop.pokemon.elements.pokemons.Gengar;
 import agh.oop.pokemon.interfaces.IMapElement;
 import agh.oop.pokemon.interfaces.IPokemon;
@@ -16,8 +16,8 @@ import java.util.Map;
 public class WorldMap implements IPositionChangeObserver {
     private final int n;
     private Vector2d heroPosition;
-    private final Hero hero = new Hero();
-    private IPokemon boss = new Gengar(20);
+    private final Hero hero;
+    private final IPokemon boss = new Gengar(20);
     private Vector2d bossPosition;
     private final List<Vector2d> freePositions = new ArrayList<>();
     private final Map<Vector2d, Obstacle> obstacleMap = new HashMap<>();
@@ -25,6 +25,7 @@ public class WorldMap implements IPositionChangeObserver {
 
     public WorldMap(int n) {
         this.n = n;
+        this.hero = new Hero();
         generateFreePositions();
         placeHero();
         placeBoss();

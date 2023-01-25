@@ -6,25 +6,58 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox fx:id="mainVBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agh.oop.pokemon.controllers.BossDefeatedController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
     <children>
-        <GridPane fx:id="grid" gridLinesVisible="true" VBox.vgrow="ALWAYS">
+        <GridPane fx:id="grid" VBox.vgrow="ALWAYS">
             <columnConstraints>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="100" />
 
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints percentHeight="80" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="20" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="60" vgrow="SOMETIMES" />
                 <RowConstraints percentHeight="10" vgrow="SOMETIMES" />
                 <RowConstraints percentHeight="10" vgrow="SOMETIMES" />
             </rowConstraints>
          <children>
-              <Button fx:id="mapButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false"  text="Attack" GridPane.rowIndex="1" />
-              <Button fx:id="menuButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false"  text="Super Attack" GridPane.rowIndex="2" />
+              <Button fx:id="mapButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Continue your journey" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+              <Button fx:id="menuButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Go to main menu" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Congratulations! You are  the best pokemon trainer in the world!!">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9342105388641357" green="0.047575537115335464" blue="0.047575537115335464" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8364400863647461" green="0.05043859779834747" blue="0.9078947305679321" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
          </children>
         </GridPane>
     </children>

@@ -1,8 +1,7 @@
 package agh.oop.pokemon.elements;
 
+import agh.oop.pokemon.elements.pokemons.Arcanine;
 import agh.oop.pokemon.elements.pokemons.Bulbasaur;
-import agh.oop.pokemon.elements.pokemons.Clefairy;
-import agh.oop.pokemon.elements.pokemons.Gengar;
 import agh.oop.pokemon.gui.ImageViewPane;
 import agh.oop.pokemon.interfaces.IMapElement;
 import agh.oop.pokemon.interfaces.IPokemon;
@@ -14,17 +13,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hero implements IMapElement {
-    private ImageViewPane imageViewPane;
+    private final boolean godMode = false;
+    private final ImageViewPane imageViewPane;
     private IPokemon opponent;
 
-    private List<IPokemon> allPokemons = new ArrayList<>();
+    private final List<IPokemon> allPokemons = new ArrayList<>();
 
 
     public Hero() {
         Image image = new Image("/images/hero.png");
         ImageView imageView = new ImageView(image);
         this.imageViewPane = new ImageViewPane(imageView);
-        allPokemons.add(new Bulbasaur(1));
+        if (godMode) {
+            allPokemons.add(new Arcanine(1));
+        } else {
+            allPokemons.add(new Bulbasaur(1));
+        }
+
         addToActive(allPokemons.get(0));
     }
 

@@ -1,4 +1,4 @@
-package agh.oop.pokemon;
+package agh.oop.pokemon.utils;
 
 import agh.oop.pokemon.controllers.ScreenController;
 import agh.oop.pokemon.elements.pokemons.Gengar;
@@ -14,7 +14,6 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 
 public class Animations {
     private final Text info;
@@ -81,7 +80,7 @@ public class Animations {
         fadeIn.play();
     }
 
-    private void endFightAnimation(Boolean won, IPokemon enemy) {
+    private void endFightAnimation(boolean won, IPokemon enemy) {
         FadeTransition fadeIn = new FadeTransition(Duration.seconds(2), info);
         fadeIn.setFromValue(0);
         fadeIn.setToValue(1);

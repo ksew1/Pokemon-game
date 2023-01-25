@@ -5,7 +5,7 @@ import agh.oop.pokemon.enums.Type;
 
 public class Clefairy extends AbstractPokemon {
     public Clefairy(int level) {
-        this.attack = 200;
+        this.attack = 20;
         this.health = 260;
         this.type = Type.FAIRY;
         this.normalAttackType = Type.FAIRY;

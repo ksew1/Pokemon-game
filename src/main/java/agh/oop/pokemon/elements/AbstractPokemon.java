@@ -1,6 +1,6 @@
 package agh.oop.pokemon.elements;
 
-import agh.oop.pokemon.RandomGenerator;
+import agh.oop.pokemon.utils.RandomGenerator;
 import agh.oop.pokemon.enums.Type;
 import agh.oop.pokemon.gui.ImageViewPane;
 import agh.oop.pokemon.interfaces.IMapElement;

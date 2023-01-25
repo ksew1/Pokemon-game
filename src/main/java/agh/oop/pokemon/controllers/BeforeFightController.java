@@ -1,27 +1,19 @@
 package agh.oop.pokemon.controllers;
 
-import agh.oop.pokemon.Vector2d;
 import agh.oop.pokemon.elements.Hero;
-import agh.oop.pokemon.elements.pokemons.Bulbasaur;
-import agh.oop.pokemon.elements.pokemons.Clefairy;
-import agh.oop.pokemon.elements.pokemons.Gengar;
-import agh.oop.pokemon.elements.pokemons.Starmie;
 import agh.oop.pokemon.interfaces.IPokemon;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class BeforeFightController {
     @FXML
@@ -40,7 +32,7 @@ public class BeforeFightController {
     private GridPane secondGrid;
     @FXML
     private GridPane thirdGrid;
-    private List<IPokemon> activePokemons = new ArrayList<>();
+    private final List<IPokemon> activePokemons = new ArrayList<>();
 
     @FXML
     public void initialize(ScreenController screenController, @NotNull Hero hero) {
@@ -58,7 +50,7 @@ public class BeforeFightController {
         columnConstraints.setPercentWidth((double) 100 / numberOfPokemons);
         columnConstraints.setHalignment(HPos.CENTER);
 
-        mainVBox.setPadding(new Insets(20, 200 * (4 - numberOfPokemons), 20, 200 * (4 - numberOfPokemons)));
+        mainVBox.setPadding(new Insets(20, 200 * (double) (4 - numberOfPokemons), 20, 200 * (double) (4 - numberOfPokemons)));
 
         grid.getColumnConstraints().clear();
         for (int i = 0; i < numberOfPokemons; i++) {

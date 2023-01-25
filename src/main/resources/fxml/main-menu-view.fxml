@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="mainVBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agh.oop.pokemon.controllers.MainMenuController">
+    <padding>
+        <Insets bottom="50" left="50" right="50" top="50" />
+    </padding>
+    <children>
+        <GridPane fx:id="grid"  opacity="0" VBox.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="100" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="40" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="20" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="20" vgrow="SOMETIMES" />
+                <RowConstraints percentHeight="20" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Button fx:id="startButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Start your journey" GridPane.rowIndex="1">
+            <font>
+                <Font name="BM HANNA 11yrs old OTF" size="35.0" />
+            </font></Button>
+            <Button fx:id="storyButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Story" GridPane.rowIndex="2">
+            <font>
+                <Font name="BM HANNA 11yrs old OTF" size="35.0" />
+            </font></Button>
+            <Button onAction="#closeAction" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Quit" GridPane.rowIndex="3">
+            <font>
+               <Font name="BM HANNA 11yrs old OTF" size="35.0" />
+            </font></Button>
+        </GridPane>
+
+    </children>
+</VBox>

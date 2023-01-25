@@ -1,6 +1,6 @@
 package agh.oop.pokemon.enums;
 
-import agh.oop.pokemon.Vector2d;
+import agh.oop.pokemon.utils.Vector2d;
 
 public enum MapDirection {
     NORTH,
@@ -17,23 +17,6 @@ public enum MapDirection {
         };
     }
 
-    public MapDirection next() {
-        return switch (this) {
-            case NORTH -> EAST;
-            case SOUTH -> WEST;
-            case EAST -> SOUTH;
-            case WEST -> NORTH;
-        };
-    }
-
-    public MapDirection previous() {
-        return switch (this) {
-            case NORTH -> WEST;
-            case SOUTH -> EAST;
-            case EAST -> NORTH;
-            case WEST -> SOUTH;
-        };
-    }
 
     public Vector2d toUnitVector() {
         return switch (this) {

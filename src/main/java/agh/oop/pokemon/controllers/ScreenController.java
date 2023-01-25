@@ -1,6 +1,6 @@
 package agh.oop.pokemon.controllers;
 
-import agh.oop.pokemon.Vector2d;
+import agh.oop.pokemon.utils.Vector2d;
 import agh.oop.pokemon.elements.Hero;
 import agh.oop.pokemon.gui.PokemonGame;
 import agh.oop.pokemon.interfaces.IPokemon;
@@ -26,13 +26,37 @@ public class ScreenController {
 
         this.main = scene;
         this.main.getStylesheets().add("/style.css");
-        activateMap();
+        activateMainMenu();
     }
 
     // Activate methods
     public void activateMap() {
         activeScene = "map";
         main.setRoot(mapPane);
+    }
+    public void activateMainMenu() {
+        try {
+            activeScene = "mainMenu";
+            FXMLLoader mainMenuLoader = new FXMLLoader(PokemonGame.class.getResource("/fxml/main-menu-view.fxml"));
+            Pane mainMenuPane = mainMenuLoader.load();
+            MainMenuController mainMenuController = mainMenuLoader.getController();
+            mainMenuController.initialize(this);
+            main.setRoot(mainMenuPane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void activateStory() {
+        try {
+            activeScene = "story";
+            FXMLLoader storyLoader = new FXMLLoader(PokemonGame.class.getResource("/fxml/story-view.fxml"));
+            Pane storyPane = storyLoader.load();
+            StoryController storyController = storyLoader.getController();
+            storyController.initialize(this);
+            main.setRoot(storyPane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void activateBossDefeated() {
         try {

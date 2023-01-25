@@ -1,9 +1,6 @@
-package agh.oop.pokemon;
+package agh.oop.pokemon.utils;
 
-import agh.oop.pokemon.elements.pokemons.Bulbasaur;
-import agh.oop.pokemon.elements.pokemons.Gengar;
-import agh.oop.pokemon.elements.pokemons.Sandslash;
-import agh.oop.pokemon.elements.pokemons.Starmie;
+import agh.oop.pokemon.elements.pokemons.*;
 import agh.oop.pokemon.enums.AttackType;
 import agh.oop.pokemon.interfaces.IPokemon;
 import agh.oop.pokemon.enums.MapDirection;
@@ -18,13 +15,17 @@ public class RandomGenerator {
     }
 
     public static IPokemon getRandomPokemon(int levelBound) {
-        int randomNumber = getRandom(4);
+        int randomNumber = getRandom(8);
         int level = getRandom(levelBound + 2) + 1;
         return switch (randomNumber) {
             case 0 -> new Bulbasaur(level);
             case 1 -> new Sandslash(level);
-            case 2 -> new Bulbasaur(level);
+            case 2 -> new Misdreavus(level);
             case 3 -> new Starmie(level);
+            case 4 -> new Diglett(level);
+            case 5 -> new Vaporeon(level);
+            case 6 -> new Eevee(level);
+            case 7 -> new Clefairy(level);
             default -> throw new IllegalStateException("Unexpected value: " + randomNumber);
         };
     }

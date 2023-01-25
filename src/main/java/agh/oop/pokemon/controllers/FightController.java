@@ -1,16 +1,14 @@
 package agh.oop.pokemon.controllers;
 
 
-import agh.oop.pokemon.Animations;
-import agh.oop.pokemon.RandomGenerator;
+import agh.oop.pokemon.utils.Animations;
+import agh.oop.pokemon.utils.RandomGenerator;
 import agh.oop.pokemon.elements.Hero;
 import agh.oop.pokemon.enums.AttackType;
 import agh.oop.pokemon.enums.Type;
 import agh.oop.pokemon.interfaces.IPokemon;
-import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -18,7 +16,6 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 
 public class FightController {
 
@@ -38,8 +35,6 @@ public class FightController {
     @FXML
     private Label opponentLevel;
     @FXML
-    private Text endText;
-    @FXML
     private Text info;
     @FXML
     private Button normalButton;
@@ -49,7 +44,6 @@ public class FightController {
     private Button ultraButton;
     @FXML
     private Button catchButton;
-    private ScreenController screenController;
 
     private IPokemon opponent;
     private Hero hero;
@@ -60,7 +54,6 @@ public class FightController {
 
     @FXML
     public void initialize(ScreenController screenController, @NotNull Hero hero, @NotNull IPokemon chosenPokemon) {
-        this.screenController = screenController;
         this.chosenPokemon = chosenPokemon;
         this.hero = hero;
         this.opponent = hero.getOpponent();
@@ -74,8 +67,6 @@ public class FightController {
         setButtonColor(superButton, chosenPokemon.getSuperAttackType());
         setButtonColor(ultraButton, chosenPokemon.getUltraAttackType());
 
-
-        //grid.setGridLinesVisible(true);
         grid.add(opponent.getImageViewPane(), 0, 0);
         grid.add(chosenPokemon.getImageViewPane(), 3, 1);
 
