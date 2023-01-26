@@ -11,8 +11,8 @@ Fight system had small adjustments to make it more interesting. Now u have 3 dif
 But with increasing damage also miss chance increases
 
 ## Type system
-There are 4 types, Water, Fire, Fairy and Grass
-Type system multiplication  is written in Main class or Type enum under damageTo method
+There are 4 types, Water, Fire, Fairy and Grass.
+Type system multiplication is written in Main class or Type enum under damageTo method
 
 ## Pokemons 
 There are 10 pokemons, 9 obtainable (including boss) and 1 only aviable in god mode
