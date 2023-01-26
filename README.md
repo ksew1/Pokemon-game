@@ -14,6 +14,6 @@ But with increasing damage also miss chance increases
 There are 4 types, Water, Fire, Fairy and Grass
 Type system multiplication  is written in Main class or Type enum under damageTo method
 
-##Pokemons 
+## Pokemons 
 There are 10 pokemons, 9 obtainable (including boss) and 1 only aviable in god mode
 
