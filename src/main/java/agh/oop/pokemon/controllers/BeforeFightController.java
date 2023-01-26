@@ -94,7 +94,6 @@ public class BeforeFightController {
             text = new Text(currentPokemon.getUltraAttackType().toString());
             text.setFill(currentPokemon.getUltraAttackType().toColor());
             currentGrid.add(text, 1, 3);
-
         }
     }
 }

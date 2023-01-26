@@ -11,11 +11,15 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class MainMenuController {
-    @FXML private GridPane grid;
-    @FXML private Button startButton;
-    @FXML private Button storyButton;
     @FXML
-    public void initialize(ScreenController screenController ) {
+    private GridPane grid;
+    @FXML
+    private Button startButton;
+    @FXML
+    private Button storyButton;
+
+    @FXML
+    public void initialize(ScreenController screenController) {
         Image image = new Image("/images/pokemon-logo.png");
         ImageView imageView = new ImageView(image);
         grid.add(new ImageViewPane(imageView), 0, 0);
@@ -30,8 +34,9 @@ public class MainMenuController {
         fade.play();
 
     }
+
     @FXML
-    public void closeAction(){
+    public void closeAction() {
         Stage stage = (Stage) grid.getScene().getWindow();
         stage.close();
     }

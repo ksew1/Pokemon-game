@@ -16,5 +16,4 @@ public class Sandslash extends AbstractPokemon {
 
         setImageViewPane("/images/pokemons/sandslash.png");
     }
-
 }

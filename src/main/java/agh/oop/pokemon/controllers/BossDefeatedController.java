@@ -23,6 +23,5 @@ public class BossDefeatedController {
         Image image = new Image("/images/ending-screen.gif");
         ImageView imageView = new ImageView(image);
         grid.add(new ImageViewPane(imageView), 0, 1);
-
     }
 }

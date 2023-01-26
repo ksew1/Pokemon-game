@@ -16,5 +16,4 @@ public class Clefairy extends AbstractPokemon {
 
         setImageViewPane("/images/pokemons/clefairy.png");
     }
-
 }

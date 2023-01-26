@@ -34,6 +34,7 @@ public class ScreenController {
         activeScene = "map";
         main.setRoot(mapPane);
     }
+
     public void activateMainMenu() {
         try {
             activeScene = "mainMenu";
@@ -46,6 +47,7 @@ public class ScreenController {
             throw new RuntimeException(e);
         }
     }
+
     public void activateStory() {
         try {
             activeScene = "story";
@@ -58,6 +60,7 @@ public class ScreenController {
             throw new RuntimeException(e);
         }
     }
+
     public void activateBossDefeated() {
         try {
             activeScene = "bossDefeated";

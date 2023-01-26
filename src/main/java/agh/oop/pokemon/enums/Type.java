@@ -36,15 +36,15 @@ public enum Type {
 
     public double damageTo(@NotNull Type type) {
         //        FIRE FAIRY GRASS WATER
-        // FIRE  |  1    1    1.5    0
-        // FAIRY |  1    1     2     0
+        // FIRE  |  1    1    1.5   1.5
+        // FAIRY |  1    1     2     2
         // GRASS | 1.5   2     1     1
-        // WATER |  0    0     1     1
+        // WATER | 1.5   2     1     1
         Double[][] damageMultiplayer = {
-                {1.0, 1.0, 1.5, 0.0},
-                {1.0, 1.0, 2.0, 0.0},
+                {1.0, 1.0, 1.5, 1.5},
+                {1.0, 1.0, 2.0, 2.0},
                 {1.5, 2.0, 1.0, 1.0},
-                {0.0, 0.0, 1.0, 1.0}
+                {1.5, 2.0, 1.0, 1.0}
         };
         return damageMultiplayer[this.toNumber()][type.toNumber()];
 

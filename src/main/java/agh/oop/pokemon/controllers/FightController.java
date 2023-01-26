@@ -86,6 +86,7 @@ public class FightController {
 
 
     }
+
     @FXML
     private void tryToCatch() {
         double catchChance = (1 - (double) opponent.getCurrentHealth() / opponent.getHealth()) * 1000;
@@ -148,6 +149,4 @@ public class FightController {
 
         }
     }
-
-
 }

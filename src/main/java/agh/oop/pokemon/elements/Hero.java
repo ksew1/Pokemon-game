@@ -41,9 +41,10 @@ public class Hero implements IMapElement {
     public void setOpponent(IPokemon opponent) {
         this.opponent = opponent;
     }
+
     public List<IPokemon> getActivePokemons() {
         List<IPokemon> activePokemons = new ArrayList<>();
-        for (IPokemon pokemon: getAllPokemons()) {
+        for (IPokemon pokemon : getAllPokemons()) {
             if (pokemon.isActive()) activePokemons.add(pokemon);
         }
         return activePokemons;
@@ -59,6 +60,7 @@ public class Hero implements IMapElement {
         }
         return level;
     }
+
     public int getNumberOfActive() {
         int counter = 0;
         for (IPokemon pokemon : getAllPokemons()) {

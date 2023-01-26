@@ -84,7 +84,7 @@ public class Animations {
         FadeTransition fadeIn = new FadeTransition(Duration.seconds(2), info);
         fadeIn.setFromValue(0);
         fadeIn.setToValue(1);
-        fadeIn.setOnFinished(e ->{
+        fadeIn.setOnFinished(e -> {
             if (won && enemy instanceof Gengar) {
                 screenController.activateBossDefeated();
             } else {
@@ -92,7 +92,7 @@ public class Animations {
             }
 
 
-        } );
+        });
         fadeIn.play();
 
     }
@@ -119,10 +119,8 @@ public class Animations {
         }
         damage = (int) (damage * type.damageTo(enemy.getType()));
 
-        if (secondAnimation)
-            text += "You: ";
-        else
-            text += pokemon.getClass().getSimpleName() + ": ";
+        if (secondAnimation) text += "You: ";
+        else text += pokemon.getClass().getSimpleName() + ": ";
 
         if (damage == 0) {
             text += "Miss!";

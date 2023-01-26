@@ -8,19 +8,14 @@
 
 <VBox alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="agh.oop.pokemon.controllers.ChoiceController">
-    <children>
-        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#toMap"
-                text="Go back to map">
-            <VBox.margin>
-                <Insets top="20.0"/>
-            </VBox.margin>
-        </Button>
-        <ScrollPane prefHeight="999999999">
-            <HBox fx:id="box" alignment="center">
-            </HBox>
-        </ScrollPane>
-
-    </children>
-
-
+    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#toMap"
+            text="Go back to map">
+        <VBox.margin>
+            <Insets top="20.0"/>
+        </VBox.margin>
+    </Button>
+    <ScrollPane prefHeight="999999999">
+        <HBox fx:id="box" alignment="center">
+        </HBox>
+    </ScrollPane>
 </VBox>

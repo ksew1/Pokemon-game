@@ -3,11 +3,9 @@ package agh.oop.pokemon.enums;
 import agh.oop.pokemon.utils.Vector2d;
 
 public enum MapDirection {
-    NORTH,
-    SOUTH,
-    WEST,
-    EAST;
+    NORTH, SOUTH, WEST, EAST;
 
+    @Override
     public String toString() {
         return switch (this) {
             case NORTH -> "Północ";

@@ -22,11 +22,11 @@ public class ChoiceController {
     private final List<PokemonController> pokemonControllerList = new ArrayList<>();
 
     @FXML
-    public void initialize(ScreenController screenController , @NotNull Hero hero) {
+    public void initialize(ScreenController screenController, @NotNull Hero hero) {
         this.screenController = screenController;
         try {
             for (IPokemon pokemon : hero.getAllPokemons()) {
-                addPokemon(pokemon,  hero);
+                addPokemon(pokemon, hero);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -43,12 +43,14 @@ public class ChoiceController {
         pane.setPrefWidth(400);
         box.getChildren().add(pane);
     }
+
     @FXML
     private void toMap() {
         screenController.activateMap();
     }
+
     public void setAllButtons() {
-        for (PokemonController pokemonController: pokemonControllerList) {
+        for (PokemonController pokemonController : pokemonControllerList) {
             pokemonController.initButton();
         }
     }

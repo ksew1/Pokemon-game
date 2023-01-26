@@ -40,7 +40,7 @@ public class WorldMap implements IPositionChangeObserver {
     }
 
     private void placeHero() {
-        this.heroPosition = new Vector2d(n / 2  , n / 2);
+        this.heroPosition = new Vector2d(n / 2, n / 2);
         freePositions.remove(heroPosition);
     }
 

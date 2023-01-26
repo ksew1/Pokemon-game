@@ -117,6 +117,4 @@ public abstract class AbstractPokemon implements IMapElement, IPokemon {
     public ImageViewPane getImageViewPane() {
         return imageViewPane;
     }
-
-
 }

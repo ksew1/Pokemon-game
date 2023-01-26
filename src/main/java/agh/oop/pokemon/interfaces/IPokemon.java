@@ -25,7 +25,9 @@ public interface IPokemon {
     int getHealth();
 
     void setCurrentHealth(int currentHealth);
+
     int getCurrentHealth();
+
     int getLevel();
 
     ImageViewPane getImageViewPane();
@@ -33,6 +35,8 @@ public interface IPokemon {
     int getSuperAttackWithOutMiss();
 
     int getUltraAttackWithOutMiss();
+
     void setActive(boolean active);
+
     boolean isActive();
 }

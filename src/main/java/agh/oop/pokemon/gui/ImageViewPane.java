@@ -8,7 +8,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 
 
-
 public class ImageViewPane extends Region {
 
     private final ObjectProperty<ImageView> imageViewProperty = new SimpleObjectProperty<>();

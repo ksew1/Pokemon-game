@@ -7,83 +7,78 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="mainVBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agh.oop.pokemon.controllers.BeforeFightController">
-    <children>
-        <GridPane fx:id="grid" alignment="CENTER" gridLinesVisible="true" VBox.vgrow="ALWAYS">
+<VBox fx:id="mainVBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="agh.oop.pokemon.controllers.BeforeFightController">
+    <GridPane fx:id="grid" alignment="CENTER" gridLinesVisible="true" VBox.vgrow="ALWAYS">
+        <rowConstraints>
+            <RowConstraints percentHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES"/>
+            <RowConstraints percentHeight="20.0" vgrow="SOMETIMES"/>
+            <RowConstraints percentHeight="10.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints/>
+            <ColumnConstraints/>
+            <ColumnConstraints/>
+        </columnConstraints>
+        <GridPane fx:id="firstGrid" GridPane.rowIndex="6">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
             <rowConstraints>
-                <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="20.0" vgrow="SOMETIMES" />
-                <RowConstraints percentHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
             </rowConstraints>
-         <children>
-            <GridPane fx:id="firstGrid" GridPane.rowIndex="6">
-              <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Super" GridPane.rowIndex="2" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ultra" GridPane.rowIndex="3" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack types" GridPane.columnSpan="2" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Normal" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <Button fx:id="firstButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Choose!" GridPane.rowIndex="7" />
-            <Button fx:id="secondButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Choose!" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Button fx:id="thirdButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" text="Choose!" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <GridPane fx:id="secondGrid" GridPane.columnIndex="1" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Super" GridPane.rowIndex="2" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ultra" GridPane.rowIndex="3" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack types" GridPane.columnSpan="2" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Normal" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-            <GridPane fx:id="thirdGrid" GridPane.columnIndex="2" GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Super" GridPane.rowIndex="2" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ultra" GridPane.rowIndex="3" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack types" GridPane.columnSpan="2" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Normal" GridPane.rowIndex="1" />
-               </children>
-            </GridPane>
-         </children>
-         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints />
-            <ColumnConstraints />
-         </columnConstraints>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Super" GridPane.rowIndex="2"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ultra" GridPane.rowIndex="3"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack types" GridPane.columnSpan="2"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Normal" GridPane.rowIndex="1"/>
         </GridPane>
-    </children>
+        <Button fx:id="firstButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false"
+                text="Choose!" GridPane.rowIndex="7"/>
+        <Button fx:id="secondButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false"
+                text="Choose!" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+        <Button fx:id="thirdButton" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false"
+                text="Choose!" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+        <GridPane fx:id="secondGrid" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Super" GridPane.rowIndex="2"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ultra" GridPane.rowIndex="3"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack types" GridPane.columnSpan="2"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Normal" GridPane.rowIndex="1"/>
+        </GridPane>
+        <GridPane fx:id="thirdGrid" GridPane.columnIndex="2" GridPane.rowIndex="6">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Super" GridPane.rowIndex="2"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ultra" GridPane.rowIndex="3"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attack types" GridPane.columnSpan="2"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Normal" GridPane.rowIndex="1"/>
+        </GridPane>
+    </GridPane>
 </VBox>

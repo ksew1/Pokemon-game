@@ -13,6 +13,7 @@ public class Obstacle implements IMapElement {
         ImageView imageView = new ImageView(image);
         this.imageViewPane = new ImageViewPane(imageView);
     }
+
     @Override
     public ImageViewPane getImageViewPane() {
         return this.imageViewPane;

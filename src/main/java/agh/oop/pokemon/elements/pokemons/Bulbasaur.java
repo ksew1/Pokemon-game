@@ -17,5 +17,4 @@ public class Bulbasaur extends AbstractPokemon {
 
         setImageViewPane("/images/pokemons/bulbasaur.png");
     }
-
 }
